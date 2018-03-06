@@ -9,16 +9,25 @@ import processing.core.PApplet;
  */
 
 public class Sketch extends PApplet {
+    int i=0;
 
     public void settings() {
         size(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
     }
 
-    public void setup() { }
+    public void setup() {
+        i=0;
+    }
 
     public void draw() {
+        if(i%2==0){
+            fill(84, 242, 95);
+        }else{
+            fill(219, 50, 208);
+        }
         if (mousePressed) {
-            ellipse(mouseX, mouseY, 50, 50);
+            ellipse(mouseX, mouseY, 100,100);
+            i+=1;
         }
     }
 
