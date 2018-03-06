@@ -3,8 +3,12 @@ package com.bugscript.processingdraw;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import processing.android.CompatUtils;
 import processing.android.PFragment;
@@ -40,4 +44,23 @@ public class MainActivity extends AppCompatActivity {
             sketch.onNewIntent(intent);
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.type_menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id=item.getItemId();
+        if(id==R.id.action_settings){
+            Toast.makeText(MainActivity.this,"Cleared..",Toast.LENGTH_LONG).show();
+            sketch.background(0);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
