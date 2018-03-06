@@ -11,7 +11,7 @@ import processing.core.PShape;
 public class Sketch extends PApplet {
     float angle = 0;
     PShape cube;
-    int i=0,j=0;
+    int i=0,j=0,z=0;
 
     public void settings() {
         fullScreen(P3D);
@@ -19,13 +19,13 @@ public class Sketch extends PApplet {
 
     public void setup() {
         fullScreen(P3D);
-        PImage tex = loadImage("google.png");
+        PImage tex = loadImage("pattern.jpg");
         cube = createShape(BOX, 400);
         cube.setTexture(tex);
     }
 
     public void draw() {
-        background(0);
+        background(135, 152, 209);
         lights();
         translate(i,j);
         if(mousePressed){
@@ -40,8 +40,20 @@ public class Sketch extends PApplet {
             }else if(j<height){
                 j+=5;
             }else{
-                i=0;
-                j=height/2;
+                if(z%2==0){
+                    i=0;
+                    j=height/2;
+                }else if(z%3==0){
+                    i=0;
+                    j=height/4;
+                }else if(z%5==0){
+                    i=width/2;
+                    j=0;
+                }else{
+                    i=0;
+                    j=height/8;
+                }
+                z+=1;
             }
         }
         shape(cube);
