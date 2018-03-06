@@ -28,17 +28,22 @@ public class Sketch extends PApplet {
         background(0);
         lights();
         translate(i,j);
-        rotateY(angle);
-        rotateX(angle*2);
-        shape(cube);
-        angle += 0.01;
-        if(i<width){
-            i+=5;
-        }else if(j<height){
-            j+=5;
+        if(mousePressed){
+            rotateY(angle);
+            rotateX(angle*2);
         }else{
-            i=0;
-            j=height/2;
+            rotateY(angle);
+            rotateX(angle*2);
+            angle += 0.01;
+            if(i<width){
+                i+=5;
+            }else if(j<height){
+                j+=5;
+            }else{
+                i=0;
+                j=height/2;
+            }
         }
+        shape(cube);
     }
 }
