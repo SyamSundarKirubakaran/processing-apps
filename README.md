@@ -63,9 +63,11 @@ of the screen with only one of it's side visible and the remaining sides hidden.
 
 **Show case:**
 <br />
+### Mock Up:
 <p align="center">
   <img src="asserts/3d.gif">
 </p><br />
+### Game:
 <p align="center">
   <img src="asserts/game.gif">
 </p>
