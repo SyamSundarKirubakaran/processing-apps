@@ -16,19 +16,32 @@ public class Sketch extends PApplet {
     }
 
     public void setup() {
+        background(0);
         i=0;
     }
 
     public void draw() {
+//        if(i%2==0){
+//            fill(84, 242, 95);
+//        }else{
+//            fill(219, 50, 208);
+//        }
+//        if (mousePressed) {
+//            ellipse(mouseX, mouseY, 100,100);
+//            i+=1;
+//        }
+
+        stroke(255);
         if(i%2==0){
-            fill(84, 242, 95);
+            fill(66, 134, 244);
         }else{
-            fill(219, 50, 208);
+            fill(244, 65, 68);
         }
-        if (mousePressed) {
-            ellipse(mouseX, mouseY, 100,100);
-            i+=1;
+        if(mousePressed) {
+            triangle(mouseX, mouseY, 58, 20, 150, 150);
+            i += 1;
         }
+
     }
 
 }
