@@ -66,5 +66,4 @@ of the screen with only one of it's side visible and the remaining sides hidden.
 ### Mock Up / Game:
 <p align="center">
   <img src="asserts/3d.gif">
-  <img src="asserts/game.gif">
 </p><br />
